@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DivideLineTextView">
+        <attr name="lineColor" format="color" />
+        <attr name="cursorColor" format="color" />
+        <attr name="lineTextColor" format="color" />
+        <attr name="divideWidth" format="dimension" />
+        <attr name="inputLength" format="integer" />
+        <attr name="inputType" format="enum">  <!-- keyboard classic -->
+            <enum name="INPUT_NULL" value="0x00000000" />
+            <enum name="INPUT_NUMBER" value="0x00000002" />
+        </attr>
+        <attr name="isPassword" format="boolean" />
+        <attr name="passwordStyle" format="enum">
+            <enum name="STYLE_POINT" value="1" /> <!-- black point style -->
+            <enum name="STYLE_START" value="2" /> <!-- **** style -->
+        </attr>
+        <attr name="lineTextSize" format="dimension" />
+    </declare-styleable>
+
+</resources>

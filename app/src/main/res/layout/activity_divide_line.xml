@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="com.adolph.test.divideLine.DivideLineTestActivity">
+
+    <com.adolph.widget.DivideLineTextView
+        android:id="@+id/divideLine1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:isPassword="true"
+        app:passwordStyle="STYLE_START"/>
+
+    <com.adolph.widget.DivideLineTextView
+        android:id="@+id/divideLine2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:inputLength="4"
+        app:lineTextColor="@color/red"
+        app:cursorColor="@color/pink"
+        app:lineColor="@color/green"
+        app:lineTextSize="20sp"/>
+
+    <com.adolph.widget.DivideLineTextView
+        android:id="@+id/divideLine3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:passwordStyle="STYLE_POINT"
+        app:inputType="INPUT_NUMBER"
+        app:isPassword="true"
+        app:divideWidth="20dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="clear text"
+        android:onClick="clearText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="get text"
+        android:onClick="showText"/>
+
+</LinearLayout>
