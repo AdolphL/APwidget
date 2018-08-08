@@ -142,7 +142,7 @@ public class DivideLineTextView extends View {
     private void drawLine(Canvas canvas) {
         int offset = (int) (divideWidth / 2);
         for (int i = 0; i < inputLength; i++) {
-            if (i == currentIndex) {
+            if (i == currentIndex && hasFocus()) {
                 p.setColor(cursorColor);
             } else {
                 p.setColor(lineColor);
@@ -292,6 +292,15 @@ public class DivideLineTextView extends View {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         isLive = false;
+    }
+
+    @Override
+    protected void onFocusChanged(boolean gainFocus, int direction, @Nullable Rect previouslyFocusedRect) {
+        super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
+        if(!hasFocus()) {
+            isShowCursor = false;
+            postInvalidate();
+        }
     }
 
     public void clearInputText() {
