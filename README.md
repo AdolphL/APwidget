@@ -6,7 +6,7 @@ Some Android widget
 # 组件使用说明
 ##  验证码文本框
 ### 效果图
-![](https://github.com/AdolphL/picture/blob/master/ap_widget/1.png)
+![](https://github.com/AdolphL/picture/blob/master/ap_widget/2.png)
 ### Demo地址:
 [APwidget](https://github.com/AdolphL/APwidget/tree/master/app/src/main/java/com/adolph/test/divideLine)
 ### 使用方法
