@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 
+import com.adolph.widget.R;
+
+
 /**
  * Created by Adolph on 2018/7/24.
  */
@@ -109,6 +112,10 @@ public class SwipeBackWrapper {
 
     public boolean isConsumerEvent(MotionEvent event) {
         return event.getRawX() < maxDownBoundary || isDown;
+    }
+
+    public boolean isClosed() {
+        return isClosed;
     }
 
     private void startSlideAnimator(View v, int duration, float startX, float endX, Callback callback) {

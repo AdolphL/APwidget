@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.adolph.test.base.BaseActivity;
 import com.adolph.widget.DivideLineTextView;
 import com.adolph.widget.R;
 
-public class DivideLineTestActivity extends AppCompatActivity {
+public class DivideLineTestActivity extends BaseActivity {
 
     DivideLineTextView textView1;
     DivideLineTextView textView2;

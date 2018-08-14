@@ -18,6 +18,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 
+
 import static android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT;
 
 /**
