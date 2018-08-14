@@ -21,7 +21,7 @@ public class BaseApplication extends Application {
 
         activityLinked = new LinkedList<>();
 
-        this.registerActivityLifecycleCallbacks(new ActivityLifecycle());
+        this.registerActivityLifecycleCallbacks(new ActivityLifecycle()); //register activity listener
     }
 
     public void killCurrentActivity() {
