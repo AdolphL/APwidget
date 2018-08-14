@@ -64,7 +64,7 @@ Some Android widget
 [APwidget](https://github.com/AdolphL/APwidget/tree/master/app/src/main/java/com/adolph/test/swipeback)
 ### 使用方法
 这个组件编写的侵入性比较强，大家可以根据自己的选择决定要不要使用，并且在Demo里我也写了一套解决方案可供参考。
-1.必要的设置
+1.必要的设置 <br>
 必须设置我们Activity的window背景为透明，否则我们只能看到window view的背景色，并不能看到上一个Activity。
 在我们的Application的Style样式中添加：
 ``` xml
@@ -73,14 +73,14 @@ Some Android widget
         <item name="android:windowIsTranslucent">true</item>
     </style>
 ```
-并且我们需要屏蔽Activity自带的进入，退出动画使用此代码在你的BaseActivity中：
+并且我们需要屏蔽Activity自带的进入，退出动画使用此代码在你的BaseActivity的onCreate方法中：
 ``` Java
 onCreate(@Nullable Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   overridePendingTransition(R.anim.slide_in_left_full, R.anim.slide_none); //用于屏蔽Activity自带的动画效果
 }
 ```
-2.无嵌套滑动的Activity
+2.无嵌套滑动的Activity <br>
 因为是全局性的改造，所以最好再BaseActivity中加入此组件，当然你也可以在需要的Activity初始化，具体操作参考下列代码（在Demo中有详细）。
 ``` Java
 protected boolean isSwipeBackSupport = true;  //某些Activity不想拥有滑动退出的效果，只要在父类onCreate之前将isSwipeBackSupport更改为false即可
@@ -113,7 +113,7 @@ protected boolean isSwipeBackSupport = true;  //某些Activity不想拥有滑动
         return backWrapper != null && backWrapper.isConsumerEvent(event);
     }
 ```
-3.涉及了嵌套滑动的Activity
+3.涉及了嵌套滑动的Activity <br>
 因为涉及了嵌套滑动，我这里取巧了，实现的方式比较简单，大家可以随意继承某个布局，并在其中覆盖以下方法（参考Demo SwipeBackLinear）。
 ``` Java
 @Override
@@ -142,6 +142,9 @@ protected boolean isSwipeBackSupport = true;  //某些Activity不想拥有滑动
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/swipe_group">
+    
+    xxxx //你的布局
+  
 </com.adolph.widget.SwipeBackLinear>
 ```
 ### Api
