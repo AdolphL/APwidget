@@ -106,14 +106,14 @@ public class DivideLineTextView extends View {
                 float w = textSize * 0.6f;
                 float sy = height - w > 0 ? (height - w) / 2 : 0;
 
-                RectF rectF = new RectF(i * (lineWidth + divideWidth) +  (lineWidth + divideWidth) / 2 - w / 2, sy, i * (lineWidth + divideWidth) +  (lineWidth + divideWidth) / 2 + w / 2, w + sy);
+                RectF rectF = new RectF(i * (lineWidth + divideWidth) + (lineWidth + divideWidth) / 2 - w / 2, sy, i * (lineWidth + divideWidth) + (lineWidth + divideWidth) / 2 + w / 2, w + sy);
                 float rr = textSize / 2;
                 canvas.drawRoundRect(rectF, rr, rr, p);
             } else {
                 Rect rect = new Rect();
                 p.getTextBounds(label, 0, label.length(), rect);
                 float offsetY = height - rect.height() > 0 ? (height - rect.height()) / 2 : 0;
-                canvas.drawText(label, i * (lineWidth + divideWidth) +  (lineWidth + divideWidth) / 2 - rect.width() / 2, height - offsetY, p);
+                canvas.drawText(label, i * (lineWidth + divideWidth) + (lineWidth + divideWidth) / 2 - rect.width() / 2, height - offsetY, p);
             }
         }
 
@@ -208,7 +208,7 @@ public class DivideLineTextView extends View {
 
             @Override
             public boolean sendKeyEvent(KeyEvent event) {
-                if(event.getAction() == KeyEvent.ACTION_UP) {
+                if (event.getAction() == KeyEvent.ACTION_UP) {
                     switch (event.getKeyCode()) {
                         case KeyEvent.KEYCODE_DEL:
                             if (currentIndex > 0) {
@@ -274,7 +274,7 @@ public class DivideLineTextView extends View {
         isLive = true;
         new Thread(() -> {
             while (isLive) {
-                if(hasFocus()) {
+                if (hasFocus()) {
                     isShowCursor = !isShowCursor;
                     postInvalidate();
                 } else {
@@ -298,7 +298,7 @@ public class DivideLineTextView extends View {
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction, @Nullable Rect previouslyFocusedRect) {
         super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
-        if(!hasFocus()) {
+        if (!hasFocus()) {
             isShowCursor = false;
             postInvalidate();
         }
@@ -315,7 +315,8 @@ public class DivideLineTextView extends View {
         if (currentIndex == inputLength) {
             try {
                 ((InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getWindowToken(), SHOW_IMPLICIT);
-            } catch (Exception ignore) {}
+            } catch (Exception ignore) {
+            }
 
             if (completeListener != null) {
                 completeListener.onComplete(values);
@@ -338,7 +339,8 @@ public class DivideLineTextView extends View {
     public String getValueString() {
         StringBuilder sb = new StringBuilder();
         for (String str : values) {
-            sb.append(str);
+            if (str != null)
+                sb.append(str);
         }
         return sb.toString();
     }
